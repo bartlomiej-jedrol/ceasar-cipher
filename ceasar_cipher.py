@@ -19,8 +19,10 @@ while run_again == True:
             else:
                 index = alphabet.index(char)
                 new_index = index + shift_amount
+
                 # Check if range exceeds the alphabet.
                 nr_exceeds_alpha = int((abs(new_index) + shift) / len(alphabet)-1)
+                
                 # Extend the alphabet if range is excedeed.
                 if nr_exceeds_alpha > 0:
                     for _ in range(nr_exceeds_alpha): 
@@ -28,6 +30,7 @@ while run_again == True:
 
                 new_char = alphabet[new_index]                
                 encrypted_text += new_char
+
         print(encrypted_text)
 
     ceasar(direction, text, shift)
