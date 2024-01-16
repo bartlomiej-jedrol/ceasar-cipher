@@ -2,9 +2,9 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 
 run_again = True
 while run_again == True:
-    direction = input("Provide direction - (encrypt) or (decrypt): ")
-    text = input("Provide text: ")
-    shift = int(input("Provide shift: "))
+    direction = input("Direction - (encrypt) or (decrypt): ")
+    text = input("Text to encrypt: ")
+    shift = int(input("Shift key (integer): "))
 
     def ceasar(input_direction, input_text, shift_amount):
         print(shift_amount)
@@ -25,6 +25,7 @@ while run_again == True:
                 if nr_exceeds_alpha > 0:
                     for _ in range(nr_exceeds_alpha): 
                         alphabet.extend(alphabet)
+
                 new_char = alphabet[new_index]                
                 encrypted_text += new_char
         print(encrypted_text)
