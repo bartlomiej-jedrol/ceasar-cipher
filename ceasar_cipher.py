@@ -17,19 +17,15 @@ while run_again == True:
             if char not in alphabet:
                 encrypted_text += char
             else:
-                # Get current letter's index.
                 index = alphabet.index(char)
-                # Set a new index.
                 new_index = index + shift_amount
-                # Check if exceeds he alphabet list.
+                # Check if range exceeds the alphabet.
                 nr_exceeds_alpha = int((abs(new_index) + shift) / len(alphabet)-1)
-                # Extend the alphabet list if range is excedeed.
+                # Extend the alphabet if range is excedeed.
                 if nr_exceeds_alpha > 0:
                     for _ in range(nr_exceeds_alpha): 
                         alphabet.extend(alphabet)
-                # Set a new letter.
-                new_char = alphabet[new_index]
-                # Add the letter to encrypted text.
+                new_char = alphabet[new_index]                
                 encrypted_text += new_char
         print(encrypted_text)
 
